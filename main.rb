@@ -45,22 +45,17 @@ module RubyFormatter
       indent_unit = " " * @options[:indent_size]
       
       lines.each do |line|
-        # インデントを減らす必要がある行を検出
         if line.strip =~ /^end$|^else$|^elsif.*$|^rescue.*$|^ensure$|^when.*$/
           current_indent -= 1 unless current_indent.zero?
         end
         
-        # 行をトリムしてインデントを適用
         formatted_line = indent_unit * current_indent + line.strip
         
-        # 必要に応じて行の長さを調整
         if formatted_line.length > @options[:max_line_length]
-          # ここで長い行の折り返し処理を実装
         end
         
         formatted_lines << formatted_line
         
-        # インデントを増やす必要がある行を検出
         if line =~ /(\s|^)(if|unless|def|class|module|begin|case|while|until|for|do)(\s|\(|$)/
           current_indent += 1
         end
