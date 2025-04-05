@@ -1,1 +1,3 @@
-# ruby_impl_formater
+```sh
+ruby main.rb -w ./target.rb
+```
