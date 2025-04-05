@@ -1,0 +1,1 @@
+[:program, [[:void_stmt]]]
